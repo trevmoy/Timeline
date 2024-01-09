@@ -1,7 +1,5 @@
 """
 Here we will test pandas dataframes with running a script to make a mermaid timeline
-
-Still working on understanding how to get specific values from a new row every time it is run.
 """
 import pandas as pd
 
@@ -9,18 +7,21 @@ df = pd.read_csv('schedule.csv',index_col='date').sort_index()
 
 df = df.reset_index()
 
-def get_date():
-    for i in df['date']:
-        print(i)
-        
-def get_question():
-    for i in df['question']:
-        print(i)
+def get_date(num) -> str:
+    """
+    This function returns the content of a cell in the date column according to the num parameter
+    """
+    return str(df.at[num, 'date'])
 
-def get_keyword():
-    for i in df['keyword']:
-        print(i)
+def get_question(num) -> str:
+    """
+    This function returns the content of a cell in the question column according to the num parameter
+    """
+    return str(df.at[num, 'question'])
 
-# get_date()
-        
-print("Test")
+def get_keyword(num) -> str:
+    """
+    This function returns the content of a cell in the keyword column according to the num parameter
+    """
+    return str(df.at[num, 'keyword'])
+    

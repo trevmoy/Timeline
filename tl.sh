@@ -5,23 +5,19 @@
 outputfile="timeline.md"
 
 
-
-pythonscript=`python3 timeline.py`
-
-# echo $pythonscript >> $outputfile
-
-
 # This part of the script makes up the actual mermaid syntax
-# it loops through the 15 weeks in the semester and adds sections
-# and soon to be content within each section.
-echo "\`\`\`mermaid\ntimeline\n\ttitle CSC 392 Course Timeline\n\n" >> $outputfile
-for i in {1..15}
+echo "\`\`\`mermaid\ntimeline\n\ttitle CSC 392 Course Timeline\n" >> $outputfile
+# for loop loops through each class of the semester
+for i in {1..25}
 do
-    echo "\t\tsection Week $i" >> $outputfile
-    echo "\t\t2023-09-07 : Lecture" >> $outputfile
-done
-echo "\n\`\`\`" >> $outputfile
+    # Note: the semester is 15 weeks long but there are multiple classes per week
+    # echo "\t\tsection Week $i" >> $outputfile
 
-# date=("")
-# question=("")
-# keyword=("")
+    # commands call the specified function from the python script
+    date=$(python3 -c "import timeline; print(timeline.get_date($i))")
+    question=$(python3 -c "import timeline; print(timeline.get_question($i))")
+    keyword=$(python3 -c "import timeline; print(timeline.get_keyword($i))")
+
+    echo "\t\t$date - $keyword - $question" >> $outputfile
+done
+echo "\`\`\`" >> $outputfile
