@@ -1,4 +1,5 @@
 date,question,keyword,conceptual,practical,social,activity
+2023-09-05,No class,No class
 2023-09-07,"Welcome, Introduction, and Setup",intro,"what is a system, why study tools",GitHub basics,class intros,"create kwl repo in github, navigate github.com basics"
 2023-09-12,Course Logistics and Learning,logistics,github flow with issues,syllabus,working together and building common vocab,"set up to work offline together, create a folder"
 2023-09-14,Bash intro & git offline,terminal start,"git structure, paths and file system","bash path navigation, git terminal authentication",why developers work differently than casual users,navigate files and clone a repo locally
@@ -8,6 +9,7 @@ date,question,keyword,conceptual,practical,social,activity
 2023-09-28,How do programmers communicate about code?,documentation,"build, automation, modularity, pattern matching,","generate documentation with jupyterbook, gitignore, git init, git remote","main vs master, documentation community",make a jupyterbook
 2023-10-03,What *is* git?,git structure,"what is a file system, how does git keep track of versions","find in bash, seeing git config, plumbing/porcelain commands","git workflows are conventions, git can be used different ways for different types of teams, two sets of ""rules""",examine git from multiple definitions and inspect objects
 2023-10-05,Why are these tools like this?,unix philosophy,"unix philosophy, debugging strategies",decision making for branches,"social advantages of shared mental model, different target users impact on design",discussion with minor code examples
+2023-10-10,No class,No class
 2023-10-12,How does git make a commit?,git internals,"pointers, design and abstraction, intermediate stages in git, what is the staging area","inspecting git objects, when hashes are unique or the same",conventions vs requirements,create a commit using plumbing commands
 2023-10-19,How can can I release and share my code?,git references,"pointers, git branches and tags","git branches, advanced fixing, semver and conventional commits, git tags, code releases","advantages of data that is both human and machine readable, social disadvantages of computational efficiency",make a tag and release
 2023-10-17,What is a commit number?,numbers,"hashes, number systems","git commit numbers, manual hashing with git",number  systems are derived in culture,discussion and use hashing algorithm
@@ -20,8 +22,10 @@ date,question,keyword,conceptual,practical,social,activity
 2023-11-14,What happens when we run code?,hardware,von neuman architecture,reading a basic assembly language,historical context of computer architecures,use a hardware simulator to see step by step of a simple program
 2023-11-16,How does a computer represent non integer quantities?,floats,float representation,floats do not equal themselves,"social processes around standard developents, standards are for people",work with float representation through fractions in Python
 2023-11-21,How can we use logical operations?,bitwise operation,"what is a bit, what is a register, how to break larger calculations down",how an ALU works,tech interviews look for obscure details sometimes,derive addition from basic logic operations
+2023-11-23,No class,No class
 2023-11-28,What *is* a computer?,architecture,"physical gates, history",interpretting specs,social context influences technology,discussion
 2023-11-30,How does timing work in a computer?,timing,"timing, control unit, threading",threaded program with a race condition,different times matter in different cases,write a threaded program and fix a race condition
 2023-12-05,How do different types of storage work together?,memory,"different type of memory, different abstractions",working with large data,privacy/respect for data,large data that has to be read in batches
 2023-12-07,How does this all work together,review,all,end of semester logistics,group work final,"review quiz, integration/reflection questions"
 2023-12-12,How did this semester go?,feedback,all,grading,how to learn better together,discussion
+

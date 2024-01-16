@@ -17,7 +17,6 @@ do
     if [ $(($j % 2)) -eq 0 ] && [ $(($j)) != 1 ] && [ $(($j)) != 2 ];
     then
         currweek=$(($j / 2))
-        echo "$currweek"
         echo "\t\tsection Week $currweek" >> $outputfile
     fi
 
@@ -29,17 +28,18 @@ do
         keyword1=$(python3 -c "import timeline; print(timeline.get_keyword($i))")
         echo "\t\tsection Week 1" >> $outputfile
         echo "\t\t$date1 - $keyword1 - $question1" >> $outputfile
-    # checks for even
     elif [ $(($j % 2)) -eq 0 ];
+    # checks for even
     then
-    # commands call the specified function from the python script 
         date2=$(python3 -c "import timeline; print(timeline.get_date($i))")
         question2=$(python3 -c "import timeline; print(timeline.get_question($i))")
         keyword2=$(python3 -c "import timeline; print(timeline.get_keyword($i))")
         echo "\t\t$date2 - $keyword2 - $question2" >> $outputfile
+    
     else
-    # checking if the remainder is any other odd number
+        # checking if the remainder is any other odd number
         # commands run the functions for the 2nd day of the week
+        # does not count 3 because it messes the output up
         date3=$(python3 -c "import timeline; print(timeline.get_date($i))")
         question3=$(python3 -c "import timeline; print(timeline.get_question($i))")
         keyword3=$(python3 -c "import timeline; print(timeline.get_keyword($i))")
