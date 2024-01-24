@@ -50,7 +50,7 @@ do
         activity1=$(python3 -c "import timeline; print(timeline.get_df2_activity($currweek))")
         if [ $(($j)) != 2 ];
         then
-            echo "\t\t$lecturedate1 - $keyword1 - $question1" >> $outputfile
+            echo "\t\t$labdate1 - $topic1 - $activity1" >> $outputfile
         fi
         echo "\t\t$lecturedate2 - $keyword2 - $question2" >> $outputfile
         
