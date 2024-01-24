@@ -14,6 +14,10 @@ do
     # If else for determining which week should be output
     # This if else condition uses j which is the for loops iteration + 1 so that we get the correct number of 
     j=$(($j + 1))
+
+    # Gets current week
+    currweek=$(($j / 2))
+
     # checking for the special case where the remainder is 1 (in terms of j)
     if [ $(($j)) -eq 1 ];
     then
@@ -22,15 +26,19 @@ do
         question1=$(python3 -c "import timeline; print(timeline.get_df1_question($i))")
         keyword1=$(python3 -c "import timeline; print(timeline.get_df1_keyword($i))")
         
+        # For lab
+        labdate1=$(python3 -c "import timeline; print(timeline.get_df2_date(0))")
+        topic1=$(python3 -c "import timeline; print(timeline.get_df2_topic(0))")
+        activity1=$(python3 -c "import timeline; print(timeline.get_df2_activity(0))")
 
         echo "\t\tsection Week 1" >> $outputfile
+        echo "\t\t$labdate1 - $topic1 - $activity1" >> $outputfile
         echo "\t\t$lecturedate1 - $keyword1 - $question1" >> $outputfile
 
     elif [ $(($j % 2)) -eq 0 ];
     # checks for even
     then
-        # Gets current week
-        currweek=$(($j / 2))
+
     
         lecturedate2=$(python3 -c "import timeline; print(timeline.get_df1_date($i))")
         question2=$(python3 -c "import timeline; print(timeline.get_df1_question($i))")
@@ -40,9 +48,11 @@ do
         labdate1=$(python3 -c "import timeline; print(timeline.get_df2_date($currweek))")
         topic1=$(python3 -c "import timeline; print(timeline.get_df2_topic($currweek))")
         activity1=$(python3 -c "import timeline; print(timeline.get_df2_activity($currweek))")
-
+        if [ $(($j)) != 2 ];
+        then
+            echo "\t\t$lecturedate1 - $keyword1 - $question1" >> $outputfile
+        fi
         echo "\t\t$lecturedate2 - $keyword2 - $question2" >> $outputfile
-        echo "\t\t$labdate1 - $topic1 - $activity1" >> $outputfile
         
         # Outputs the current week as a section
         echo "\t\tsection Week $currweek" >> $outputfile
